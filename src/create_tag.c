@@ -16,7 +16,7 @@ tag_t *create_tag(char *line)
     tag->nb_attributes = 0;
 
     tag->name = words[0];
-    if (words[1] == NULL) {
+    if (words[1] == NULL || line[1] == '?') {
         tag->attributes = NULL;
         tag->content = NULL;
         return (tag);

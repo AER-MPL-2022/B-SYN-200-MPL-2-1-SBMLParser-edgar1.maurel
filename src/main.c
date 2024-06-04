@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     for (int i = 0; lines[i] != NULL; i++)
         nb_lines++;
     tags = malloc(sizeof(tag_t *) * (nb_lines + 1));
-    for (int i = 1; i < nb_lines; i++) {
+    for (int i = 0; i < nb_lines; i++) {
         temp_tag = create_tag(lines[i]);
         if (!is_tag_already_in_list(tags, temp_tag, j)) {
             tags[j] = temp_tag;
