@@ -5,7 +5,7 @@
 ** requirement.c
 */
 
-#include <stdlib.h>
+#include "sbml.h"
 
 int is_alpha_numerical(char c)
 {
@@ -13,15 +13,7 @@ int is_alpha_numerical(char c)
         (c >= 'a' && c <= 'z'));
 }
 
-int my_strlen(char const *str)
-{
-    int i = 0;
-
-    for (i = 0; str[i] != '\0'; i++);
-    return (i);
-}
-
-char **my_str_to_word_array_synthesis(char const *str)
+char **my_str_to_word_array(char const *str)
 {
     int i = 0;
     int j = 0;
@@ -31,8 +23,9 @@ char **my_str_to_word_array_synthesis(char const *str)
 
     for (i = 0; i < len; i++) {
         tab[j] = malloc(sizeof(char) * (my_strlen(str) + 1));
-        for (k = 0; is_alpha_numerical(str[i]) == 1; i++, k++)
+        for (k = 0; is_alpha_numerical(str[i]) == 1; i++, k++) {
             tab[j][k] = str[i];
+        }
         tab[j][k] = '\0';
         if (k != 0)
             j++;
