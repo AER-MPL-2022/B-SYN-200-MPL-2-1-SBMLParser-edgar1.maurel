@@ -23,5 +23,7 @@ int my_strcmp(char const *s1, char const *s2)
         if (s1[i] != s2[i])
             return (s1[i] - s2[i]);
     }
+    if (my_strlen(s1) != my_strlen(s2))
+        return (s1[i] - s2[i]);
     return (0);
 }
