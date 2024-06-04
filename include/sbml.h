@@ -40,3 +40,4 @@ char *copy_str(char *str);
 void print_tag(tag_t *tag);
 tag_t **sort_tags_from_name(tag_t **tags);
 int is_tag_already_in_list(tag_t **tags, tag_t *tag, int len);
+void no_option(char *file);
