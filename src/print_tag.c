@@ -20,8 +20,4 @@ void print_tag(tag_t *tag)
     for (int i = 0; i < tag->nb_attributes; i++) {
         printf("--->%s\n", attribute_names[i]);
     }
-    for (int i = 0; i < tag->nb_attributes; i++) {
-        free(attribute_names[i]);
-    }
-    free(attribute_names);
 }
